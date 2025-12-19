@@ -69,6 +69,12 @@ DB_NAME=video_poc
 JWT_SECRET=your_jwt_secret_key_here
 JWT_EXPIRES_IN=7d
 
+# AWS s3 bucket
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION=
+S3_BUCKET_NAME=
+
 # CORS (optional)
 CORS_ORIGIN=http://localhost:3001
 ```
