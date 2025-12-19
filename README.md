@@ -134,18 +134,11 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 The application uses TypeORM with automatic schema synchronization in development. Main tables:
 
 - **users** - User accounts
-- **projects** - Project data (with JSON columns for complex data)
 - **user_projects** - User-project relationships
-
-**Note:** For production, disable `synchronize: true` and use migrations.
 
 ## 📁 File Storage
 
-Uploaded files are stored in:
-- `uploads/videos/` - Video files
-- Files served statically at `/uploads/videos/{filename}`
-
-**Production Recommendation:** Use cloud storage (S3, Azure Blob, etc.)
+Use S3 cloud storage.
 
 ## 🔒 Security
 
@@ -163,14 +156,6 @@ Uploaded files are stored in:
 npm run build
 npm run start:prod
 ```
-
-### Production Considerations
-
-1. **Environment Variables**: Use strong JWT secret, secure DB credentials
-2. **Database**: Disable `synchronize: true`, use migrations
-3. **File Storage**: Consider cloud storage (S3, etc.)
-4. **Security**: Enable HTTPS, implement rate limiting
-5. **Monitoring**: Set up logging and monitoring
 
 ## 🧪 Testing API
 
@@ -210,7 +195,3 @@ PORT=3001
 ## 📚 Documentation
 
 For detailed documentation, see [BACKEND_DOCUMENTATION.md](./BACKEND_DOCUMENTATION.md)
-
-## 📄 License
-
-Private project - All rights reserved
